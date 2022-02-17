@@ -1,38 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-title: 'Bebas Neue', cursive;
+  --font-text: 'Ubuntu', sans-serif;
+
+  --font-size-title--larger: 2.25rem;
+  --font-size-title--smaller: 1.5rem;
+  --font-size-text--larger: 1rem;
+  --font-size-text--smaller: .5rem;
+
+  --font-weight--regular: 400;
+  --font-weight--bolder: 700;
+
+  --color-detail-first: #F7DF7D;
+  --color-detail-second: #FCF5DA;
+  --color-detail-third: #DAF7A6;
+  --color-detail-fourth: #FF5733;
+  --color-detail-fifth: #C70039;
+  --color-detail-sixth: #900C3F;
+  --color-font-black: #545454;
+  --color-font-gray: #929292;
+}
+
 .App {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-detail-third);
+  color: var(--color-font-black);
+  font-family: var(--font-text);
+  font-size: var(--font-size-text--larger);
+  font-weight: var(--font-weight--regular);
+}
+
+header {
+  width: 100%;
+  padding: 1.5625rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-shrink: 1;
+  gap: 3.125rem;
+  padding: 1.5625rem;
+  width: 100%;
+  height: calc(100% - 3.125rem - var(--font-size-title));
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: var(--font-size-title--larger);
+  line-height: var(--font-size-title--larger);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 {
+  font-size: var(--font-size-title--smaller);
+}
+
+h1, h2 {
+  font-family: var(--font-title);
+  font-weight: var(--font-weight--bolder);
+}
+
+.wc-counter__content {
+  outline: none;
+  width: 50%;
+  height: calc(100vh - 6.25rem - var(--font-size-title--larger));
+  overflow: auto;
+}
+
+@media (max-width: 31.25rem) {
+  h2 {
+    line-height: var(--font-size-title--smaller);
   }
-  to {
-    transform: rotate(360deg);
+  
+  main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3.125rem;
+  }
+
+  aside {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .wc-counter__content {
+    width: 100%;
+    height: calc(100vh - 9.375rem - var(--font-size-title--larger) - var(--font-size-title--smaller));
   }
 }

@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import CounterLetters from './components/CounterLetters.js'
+import CounterWords from './components/CounterWords.js'
+import CounterPhrases from './components/CounterPhrases.js'
+import './App.css'
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.contentDivision = React.createRef()
+    this.state = { content: '' }
+  }
+
+  componentDidMount() {
+    this.contentDivision.current.focus()
+  }
+
+  render() {
+    return (
+      <div className='App' >
+        <header>
+          <h1>Word Counter</h1>
+        </header>
+        <main>
+          <aside>
+            <CounterLetters content={this.state.content} />
+            <CounterWords content={this.state.content} />
+            <CounterPhrases content={this.state.content} />
+          </aside>
+          <div ref={this.contentDivision} contentEditable="true" className='wc-counter__content' onInput={this._updateContent.bind(this)}></div>
+        </main>
+      </div>
+    )
+  }
+
+  _updateContent(event) {
+    this.setState({ content: event.target.textContent })
+  }
 }
-
-export default App;

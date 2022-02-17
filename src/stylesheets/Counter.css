@@ -1,0 +1,10 @@
+@import url('../App.css');
+
+.wc-counter {
+  display: flex;
+  gap: .5rem;
+}
+
+.wc-counter__title {
+  color: var(--color-font-gray);
+}
