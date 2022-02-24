@@ -27,6 +27,8 @@
   --color-detail-sixth: #900C3F;
   --color-font-black: #545454;
   --color-font-gray: #929292;
+  --color-scrollbar-thumb: rgb(179, 179, 179);
+  --color-scrollbar-track: transparent;
 }
 
 .App {
