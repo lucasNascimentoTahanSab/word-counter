@@ -76,6 +76,19 @@ h1, h2 {
   overflow: auto;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar-thumb);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-scrollbar-track);
+}
+
+::-webkit-scrollbar {
+  width: .75rem;
+  height: .75rem;
+}
+
 @media (max-width: 31.25rem) {
   h2 {
     line-height: var(--font-size-title--smaller);
